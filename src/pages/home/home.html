@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+      Todos!
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addItem()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+
+    <ion-item-sliding *ngFor="let item of items; let i= index">
+      <ion-item (click)="viewItem(item)" class="list-item">
+        <h2>{{item.title}}</h2>
+        {{item.description}}
+
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="removeItem(item,i)">Remove</button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+
+
+
+
+  </ion-list>
+</ion-content>
